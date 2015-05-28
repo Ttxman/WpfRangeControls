@@ -1,0 +1,210 @@
+﻿<Window x:Class="demo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:demo"
+        xmlns:advanced="clr-namespace:WpfRangeControls;assembly=WpfRangeControls"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="406" Width="573">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock TextWrapping="Wrap" Grid.Column="0">positioned on 50%, fixed height <LineBreak/> align begin center end</TextBlock>
+        <Grid  Grid.Column="0" Grid.Row="1" Margin="0,20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <advanced:RangePanel Minimum="0" Maximum="100" Width="17" Background="LightGray" Grid.Column="0">
+                <Rectangle Fill="Blue" advanced:RangePanel.Position="50" advanced:RangePanel.Alignment="Begin" Height="50"/>
+            </advanced:RangePanel>
+            <advanced:RangePanel Minimum="0" Maximum="100" Width="17" Background="LightGray" Grid.Column="1">
+                <Rectangle Fill="Blue" advanced:RangePanel.Position="50" advanced:RangePanel.Alignment="Center" Height="50"/>
+            </advanced:RangePanel>
+            <advanced:RangePanel Minimum="0" Maximum="100" Width="17" Background="LightGray" Grid.Column="2">
+                <Rectangle Fill="Blue" advanced:RangePanel.Position="50"  advanced:RangePanel.Alignment="End" Height="50"/>
+            </advanced:RangePanel>
+        </Grid>
+
+
+        <TextBlock TextWrapping="Wrap" Grid.Column="1">positioned on 25% <LineBreak/> fixed width 5px <LineBreak/> horizontal alignment</TextBlock>
+        <Grid  Grid.Column="1" Grid.Row="1" Margin="0,20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <advanced:RangePanel Minimum="0" Maximum="100" Width="17" Background="LightGray" Grid.Column="0">
+                <Rectangle Fill="Green" Width="5" HorizontalAlignment="Left" advanced:RangePanel.Position="25" advanced:RangePanel.Alignment="Begin" Height="50"/>
+            </advanced:RangePanel>
+            <advanced:RangePanel Minimum="0" Maximum="100" Width="17" Background="LightGray" Grid.Column="1">
+                <Rectangle Fill="Green" Width="5" HorizontalAlignment="Center" advanced:RangePanel.Position="25" advanced:RangePanel.Alignment="Center" Height="50"/>
+            </advanced:RangePanel>
+            <advanced:RangePanel Minimum="0" Maximum="100" Width="17" Background="LightGray" Grid.Column="2">
+                <Rectangle Fill="Green" Width="5" HorizontalAlignment="Right" advanced:RangePanel.Position="25"  advanced:RangePanel.Alignment="End" Height="50" />
+            </advanced:RangePanel>
+        </Grid>
+
+        <TextBlock TextWrapping="Wrap" Grid.Column="2">75% fixed width 5px <LineBreak/> horizontal alignment, margin 3</TextBlock>
+        <Grid  Grid.Column="2" Grid.Row="1" Margin="0,20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <advanced:RangePanel Minimum="0" Maximum="100" Width="17" Background="LightGray" Grid.Column="0">
+                <Rectangle Fill="Maroon" Width="5" Margin="3" HorizontalAlignment="Left" advanced:RangePanel.Position="75" advanced:RangePanel.Alignment="Begin" Height="50"/>
+            </advanced:RangePanel>
+            <advanced:RangePanel Minimum="0" Maximum="100" Width="17" Background="LightGray" Grid.Column="1">
+                <Rectangle Fill="Maroon" Width="5" Margin="3" HorizontalAlignment="Center" advanced:RangePanel.Position="75" advanced:RangePanel.Alignment="Center" Height="50"/>
+            </advanced:RangePanel>
+            <advanced:RangePanel Minimum="0" Maximum="100" Width="17" Background="LightGray" Grid.Column="2">
+                <Rectangle Fill="Maroon" Width="5" Margin="3" HorizontalAlignment="Right" advanced:RangePanel.Position="75"  advanced:RangePanel.Alignment="End" Height="50" />
+            </advanced:RangePanel>
+        </Grid>
+
+
+        <TextBlock TextWrapping="Wrap" Grid.Column="3">50%, 8px width, horizontal alignment, margin 2 <LineBreak/> 10% 25% 66% range</TextBlock>
+        <Grid  Grid.Column="3" Grid.Row="1" Margin="0,20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+
+            </Grid.ColumnDefinitions>
+            <advanced:RangePanel Minimum="0" Maximum="100" Width="17" Background="LightGray" Grid.Column="0">
+                <Rectangle Fill="Yellow" Width="10" Margin="4" HorizontalAlignment="Left" advanced:RangePanel.Range="10" advanced:RangePanel.Position="50" advanced:RangePanel.Alignment="Begin" />
+            </advanced:RangePanel>
+            <advanced:RangePanel Minimum="0" Maximum="100" Width="17" Background="LightGray" Grid.Column="1">
+                <Rectangle Fill="Green" Width="5" Margin="0" HorizontalAlignment="Center" advanced:RangePanel.Range="25" advanced:RangePanel.Position="50" advanced:RangePanel.Alignment="Center"/>
+                <Rectangle Fill="Yellow" Width="10" Margin="4" HorizontalAlignment="Center" advanced:RangePanel.Range="25" advanced:RangePanel.Position="50" advanced:RangePanel.Alignment="Center" />
+            </advanced:RangePanel>
+            <advanced:RangePanel Minimum="0" Maximum="100" Width="17" Background="LightGray" Grid.Column="2">
+                <Rectangle Fill="Yellow" Width="10" Margin="4" HorizontalAlignment="Right" advanced:RangePanel.Range="60" advanced:RangePanel.Position="50"  advanced:RangePanel.Alignment="End" />
+            </advanced:RangePanel>
+        </Grid>
+
+        <TextBlock TextWrapping="Wrap" Grid.Column="4">databinding <LineBreak/> RangeItemsControl<LineBreak/> RangeScrollbar </TextBlock>
+        <Grid  Grid.Column="4" Grid.Row="1" Margin="0,20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+            <advanced:RangeItemsControl Minimum="0" Maximum="100" Grid.Column="0" Background="LightGray" Width="17">
+                <Rectangle Fill="Green" Width="5" HorizontalAlignment="Right" advanced:RangePanel.Position="25"  advanced:RangePanel.Alignment="End" Height="50" />
+                <Rectangle Fill="Yellow" Width="10" Margin="4" HorizontalAlignment="Left" advanced:RangePanel.Range="10" advanced:RangePanel.Position="50" advanced:RangePanel.Alignment="Begin" />
+                <CheckBox IsChecked="True"  advanced:RangePanel.Position="33"></CheckBox>
+            </advanced:RangeItemsControl>
+            <advanced:RangeItemsControl AlternationCount="2" Minimum="0" Maximum="100" Grid.Row="1" Grid.Column="1" Background="LightGray" Width="17">
+                <advanced:RangeItemsControl.ItemsSource>
+                    <x:Array Type="{x:Type system:Double}">
+                        <system:Double>10</system:Double>
+                        <system:Double>25</system:Double>
+                        <system:Double>35</system:Double>
+                        <system:Double>50</system:Double>
+                        <system:Double>60</system:Double>
+                        <system:Double>75</system:Double>
+                    </x:Array>
+                </advanced:RangeItemsControl.ItemsSource>
+                <advanced:RangeItemsControl.ItemTemplate>
+                    <DataTemplate DataType="{x:Type system:Double}">
+                        <Ellipse Name="elp" Fill="DarkRed" Width="8" Height="8" advanced:RangePanel.Position="{Binding}" advanced:RangePanel.Alignment="Center"/>
+                        <DataTemplate.Triggers>
+                            <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+                                <Setter TargetName="elp" Property="Fill" Value="DarkSalmon" />
+                            </Trigger>
+                        </DataTemplate.Triggers>
+                    </DataTemplate>
+                </advanced:RangeItemsControl.ItemTemplate>
+           </advanced:RangeItemsControl>
+        
+            <advanced:RangeScrollbar Minimum="0" Maximum="100" Grid.Column="2" x:Name="rscrollbar" SmallChange="1">
+                <Rectangle Fill="Red" Height="2" HorizontalAlignment="Stretch" advanced:RangePanel.Position="{Binding Value,ElementName=rscrollbar}" />
+                <Rectangle Fill="DarkSlateGray" Height="2" HorizontalAlignment="Stretch" advanced:RangePanel.Position="82" />
+                <Rectangle Fill="YellowGreen" Width="4" HorizontalAlignment="Left" advanced:RangePanel.Position="17"  advanced:RangePanel.Alignment="Begin" advanced:RangePanel.Range="56" />
+                <Rectangle Fill="SkyBlue" Width="5" Height="5" Margin="5,0,0,0" HorizontalAlignment="Left" advanced:RangePanel.Position="50" advanced:RangePanel.Alignment="Begin" />
+                <Rectangle Fill="Maroon" Width="5" Height="5" Margin="0,0,5,0" HorizontalAlignment="Right" advanced:RangePanel.Position="92" advanced:RangePanel.Alignment="Begin" />
+            </advanced:RangeScrollbar>
+        
+        </Grid>
+
+        <Grid Grid.ColumnSpan="5" Grid.Row="1" Margin="0,20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="1"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="1"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="1"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Rectangle Grid.Row="1" Grid.ColumnSpan="2" Fill="Black"/>
+            <Rectangle Grid.Row="3" Grid.ColumnSpan="2" Fill="Black"/>
+            <Rectangle Grid.Row="5" Grid.ColumnSpan="2" Fill="Black"/>
+        </Grid>
+
+
+        <advanced:RangeItemsControl Orientation="Horizontal" Height="17" AlternationCount="2" Minimum="0" Maximum="100" Grid.Row="2" Grid.ColumnSpan="5" Background="LightGray">
+            <advanced:RangeItemsControl.ItemsSource>
+                <x:Array Type="{x:Type system:Double}">
+                    <system:Double>10</system:Double>
+                    <system:Double>25</system:Double>
+                    <system:Double>35</system:Double>
+                    <system:Double>50</system:Double>
+                    <system:Double>60</system:Double>
+                    <system:Double>75</system:Double>
+                </x:Array>
+            </advanced:RangeItemsControl.ItemsSource>
+            <advanced:RangeItemsControl.ItemTemplate>
+                <DataTemplate DataType="{x:Type system:Double}">
+                    <Ellipse Name="elp" Fill="DarkRed" Width="8" Height="8" advanced:RangePanel.Position="{Binding}" advanced:RangePanel.Alignment="Center"/>
+                    <DataTemplate.Triggers>
+                        <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+                            <Setter TargetName="elp" Property="Fill" Value="DarkSalmon" />
+                        </Trigger>
+                    </DataTemplate.Triggers>
+                </DataTemplate>
+            </advanced:RangeItemsControl.ItemTemplate>
+        </advanced:RangeItemsControl>
+
+        <advanced:RangeScrollbar Orientation="Horizontal" AlternationCount="2" Minimum="0" Maximum="100" Grid.Row="3" Grid.ColumnSpan="5">
+            <advanced:RangeScrollbar.ItemsSource>
+                <x:Array Type="{x:Type system:Double}">
+                    <system:Double>10</system:Double>
+                    <system:Double>25</system:Double>
+                    <system:Double>35</system:Double>
+                    <system:Double>50</system:Double>
+                    <system:Double>60</system:Double>
+                    <system:Double>75</system:Double>
+                    <system:Double>88</system:Double>
+                </x:Array>
+            </advanced:RangeScrollbar.ItemsSource>
+            <advanced:RangeScrollbar.ItemTemplate>
+                <DataTemplate DataType="{x:Type system:Double}">
+                    <Rectangle Name="rect" Fill="DarkCyan" Width="2" advanced:RangePanel.Position="{Binding}" advanced:RangePanel.Alignment="Center"/>
+                </DataTemplate>
+            </advanced:RangeScrollbar.ItemTemplate>
+        </advanced:RangeScrollbar>
+    </Grid>
+</Window>
