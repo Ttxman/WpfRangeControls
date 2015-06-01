@@ -99,14 +99,14 @@
             </advanced:RangePanel>
         </Grid>
 
-        <TextBlock TextWrapping="Wrap" Grid.Column="4">databinding <LineBreak/> RangeItemsControl<LineBreak/> RangeScrollbar </TextBlock>
+        <TextBlock TextWrapping="Wrap" Grid.Column="4">databinding <LineBreak/> RangeItemsControl<LineBreak/> RangeScrollbar</TextBlock>
         <Grid  Grid.Column="4" Grid.Row="1" Margin="0,20">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            
+
             <advanced:RangeItemsControl Minimum="0" Maximum="100" Grid.Column="0" Background="LightGray" Width="17">
                 <Rectangle Fill="Green" Width="5" HorizontalAlignment="Right" advanced:RangePanel.Position="25"  advanced:RangePanel.Alignment="End" Height="50" />
                 <Rectangle Fill="Yellow" Width="10" Margin="4" HorizontalAlignment="Left" advanced:RangePanel.Range="10" advanced:RangePanel.Position="50" advanced:RangePanel.Alignment="Begin" />
@@ -133,8 +133,8 @@
                         </DataTemplate.Triggers>
                     </DataTemplate>
                 </advanced:RangeItemsControl.ItemTemplate>
-           </advanced:RangeItemsControl>
-        
+            </advanced:RangeItemsControl>
+
             <advanced:RangeScrollbar Minimum="0" Maximum="100" Grid.Column="2" x:Name="rscrollbar" SmallChange="1">
                 <Rectangle Fill="Red" Height="2" HorizontalAlignment="Stretch" advanced:RangePanel.Position="{Binding Value,ElementName=rscrollbar}" />
                 <Rectangle Fill="DarkSlateGray" Height="2" HorizontalAlignment="Stretch" advanced:RangePanel.Position="82" />
@@ -142,7 +142,7 @@
                 <Rectangle Fill="SkyBlue" Width="5" Height="5" Margin="5,0,0,0" HorizontalAlignment="Left" advanced:RangePanel.Position="50" advanced:RangePanel.Alignment="Begin" />
                 <Rectangle Fill="Maroon" Width="5" Height="5" Margin="0,0,5,0" HorizontalAlignment="Right" advanced:RangePanel.Position="92" advanced:RangePanel.Alignment="Begin" />
             </advanced:RangeScrollbar>
-        
+
         </Grid>
 
         <Grid Grid.ColumnSpan="5" Grid.Row="1" Margin="0,20">
