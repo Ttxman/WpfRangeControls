@@ -62,7 +62,9 @@ namespace WpfRangeControls
             if (_iItemsSource != null)
             {
                 _RangeControl.ItemsSource = _iItemsSource;
+
                 _iItemsSource = null;
+
 
                 if (PropertyChanged != null)
                     PropertyChanged(this, new PropertyChangedEventArgs("ItemsSource"));
