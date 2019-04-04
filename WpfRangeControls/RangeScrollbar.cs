@@ -58,26 +58,6 @@ namespace WpfRangeControls
                 _iItems = null;
 
             }
-
-            if (_iItemsSource != null)
-            {
-                _RangeControl.ItemsSource = _iItemsSource;
-                _iItemsSource = null;
-
-                if (PropertyChanged != null)
-                    PropertyChanged(this, new PropertyChangedEventArgs("ItemsSource"));
-            }
-
-            if (_iItemTemplate != null)
-            {
-                _RangeControl.ItemTemplate = _iItemTemplate;
-                _iItemTemplate = null;
-
-                if (PropertyChanged != null)
-                    PropertyChanged(this, new PropertyChangedEventArgs("ItemTemplate"));
-
-            }
-
         }
 
 
@@ -107,45 +87,21 @@ namespace WpfRangeControls
             }
         }
 
-        IEnumerable _iItemsSource = null;
+        public static readonly DependencyProperty ItemsSourceProperty = ItemsControl.ItemsSourceProperty.AddOwner(typeof(RangeScrollbar));
         [Bindable(true), Category("Content")]
         public IEnumerable ItemsSource
         {
-            get
-            {
-                if (_RangeControl == null)
-                    return _iItemsSource;
-
-                return _RangeControl.ItemsSource;
-            }
-
-            set
-            {
-                if (_RangeControl == null)
-                    _iItemsSource = value;
-                else
-                    _RangeControl.ItemsSource = value;
-            }
+            get { return (IEnumerable)GetValue(ItemsSourceProperty); }
+            set { SetValue(ItemsSourceProperty, value); }
         }
 
 
-        DataTemplate _iItemTemplate = null;
+        public static readonly DependencyProperty ItemTemplateProperty = ItemsControl.ItemTemplateProperty.AddOwner(typeof(RangeScrollbar));
         [Bindable(true), Category("Content")]
         public DataTemplate ItemTemplate
         {
-            get
-            {
-                if (_RangeControl == null)
-                    return _iItemTemplate;
-                return _RangeControl.ItemTemplate;
-            }
-            set
-            {
-                if (_RangeControl == null)
-                    _iItemTemplate = value;
-                else
-                    _RangeControl.ItemTemplate = value;
-            }
+            get { return (DataTemplate)GetValue(ItemTemplateProperty); }
+            set { SetValue(ItemTemplateProperty, value); }
         }
 
         public static readonly DependencyProperty AlternationCountProperty = ItemsControl.AlternationCountProperty.AddOwner(typeof(RangeScrollbar));
