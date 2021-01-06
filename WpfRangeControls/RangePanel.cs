@@ -158,6 +158,7 @@ namespace WpfRangeControls
                 typeof(RangePanel),
                 new FrameworkPropertyMetadata(
                         0.0d,
+                        FrameworkPropertyMetadataOptions.AffectsMeasure,
                         new PropertyChangedCallback(OnMinimumChanged),
                         new CoerceValueCallback(CoerceMinimum)),
                 new ValidateValueCallback(IsValidDoubleValue));
@@ -214,6 +215,7 @@ namespace WpfRangeControls
         typeof(RangePanel),
         new FrameworkPropertyMetadata(
                 100.0d,
+                FrameworkPropertyMetadataOptions.AffectsMeasure,
                 new PropertyChangedCallback(OnMaximumChanged),
                         new CoerceValueCallback(CoerceMaximum)),
                 new ValidateValueCallback(IsValidDoubleValue));
